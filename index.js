@@ -2,8 +2,8 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
 
-const token = '5833515258:AAHm5gAkLr7XcD3JGiQdOxDRXky3sby6dUw';
-const webAppUrl = 'http://v90026cl.beget.tech';
+const token = '5336424335:AAGk0uyo0qqRCrKgvr2J7GrYKK1S0MF8878';
+const webAppUrl = 'https://gorgeous-torte-e54231.netlify.app';
 
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
@@ -61,14 +61,8 @@ app.post('/web-data', async (req, res) => {
                 message_text: ` Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
             }
         })
-        setTimeout(async () => {
-            await bot.sendMessage(chatId, 'cringe work');
-        }, 3000)
         return res.status(200).json({});
     } catch (e) {
-        setTimeout(async () => {
-            await bot.sendMessage(chatId, e.message);
-        }, 3000)
         return res.status(500).json({})
     }
 })
