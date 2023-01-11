@@ -50,7 +50,7 @@ bot.on('message', async (msg) => {
     }
 });
 
-app.get("/", (req, res) => {
+app.get("/user", (req, res) => {
     res.json({ message: "Это стартовая страница нашего приложения" });
 });
 
