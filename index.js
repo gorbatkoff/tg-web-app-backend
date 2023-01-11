@@ -50,10 +50,6 @@ bot.on('message', async (msg) => {
     }
 });
 
-app.get('/', function (req, res) {
-    res.send({message: "Hello bot"})
-})
-
 app.post('/web-data', async (req, res) => {
     const {queryId, products = [], totalPrice} = req.body;
     try {
@@ -65,7 +61,7 @@ app.post('/web-data', async (req, res) => {
                 message_text: ` Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
             }
         })
-        return res.status(200).json({message: "test"});
+        return res.status(200).json({});
     } catch (e) {
         return res.status(500).json({})
     }
