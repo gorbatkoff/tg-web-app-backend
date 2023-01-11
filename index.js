@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
 
-const token = '5336424335:AAGk0uyo0qqRCrKgvr2J7GrYKK1S0MF8878';
+const token = '5833515258:AAHm5gAkLr7XcD3JGiQdOxDRXky3sby6dUw';
 const webAppUrl = 'https://gorgeous-torte-e54231.netlify.app';
 
 const bot = new TelegramBot(token, {polling: true});
