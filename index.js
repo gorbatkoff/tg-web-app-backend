@@ -51,7 +51,7 @@ bot.on('message', async (msg) => {
 });
 
 app.get('/', function (req, res) {
-    res.send({message: "Hello"})
+    res.json({message: "Hello"})
 })
 
 app.post('/web-data', async (req, res) => {
