@@ -62,6 +62,10 @@ app.get('/', function (req, res) {
     res.json({message: "Hello"})
 })
 
+app.get('/cringe', function (req, res) {
+    res.json({message: "Cringe"})
+})
+
 // app.post('/web-data', async (req, res) => {
 //     const {queryId, products = [], totalPrice} = req.body;
 //     try {
