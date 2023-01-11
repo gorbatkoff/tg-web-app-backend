@@ -50,6 +50,10 @@ bot.on('message', async (msg) => {
     }
 });
 
+app.get('/', function (req, res) {
+    res.send({message: "Hello"})
+})
+
 app.post('/web-data', async (req, res) => {
     const {queryId, products = [], totalPrice} = req.body;
     try {
