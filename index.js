@@ -61,8 +61,14 @@ app.post('/web-data', async (req, res) => {
                 message_text: ` Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
             }
         })
+        setTimeout(async () => {
+            await bot.sendMessage(chatId, 'cringe work');
+        }, 3000)
         return res.status(200).json({});
     } catch (e) {
+        setTimeout(async () => {
+            await bot.sendMessage(chatId, e.message);
+        }, 3000)
         return res.status(500).json({})
     }
 })
