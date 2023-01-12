@@ -67,6 +67,10 @@ app.post('/web-data', async (req, res) => {
     }
 })
 
+app.get('/', (req, res) => {
+    return res.send({message: "Hello"})
+})
+
 const PORT = 80;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
