@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 
 const token = '5833515258:AAHm5gAkLr7XcD3JGiQdOxDRXky3sby6dUw';
-const webAppUrl = 'http://v90026cl.beget.tech';
+const webAppUrl = 'https://ornate-selkie-c27577.netlify.app';
 
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
@@ -58,7 +58,7 @@ app.post('/web-data', async (req, res) => {
             id: queryId,
             title: 'Успешная покупка',
             input_message_content: {
-                message_text: ` Поздравляю с покупкой!`
+                message_text: ` Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
             }
         })
         return res.status(200).json({});
